@@ -15,6 +15,8 @@
 	<description>Spring Boot for REST API project</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<acn-log4j.version>2.1.2</acn-log4j.version>
+		<log4j2.version>2.17.0</log4j2.version>
 		<kotlin.version>1.6.21</kotlin.version>
 	</properties>
 	<dependencies>
@@ -67,6 +69,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		swagger			-->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -76,6 +79,16 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
+		</dependency>
+<!--		log				-->
+		<dependency>
+			<groupId>com.ascendcorp.logging.log4j</groupId>
+			<artifactId>acn-log4j</artifactId>
+			<version>${acn-log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 	</dependencies>
 

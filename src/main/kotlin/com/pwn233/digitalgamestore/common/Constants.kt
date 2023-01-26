@@ -1,6 +1,7 @@
 package com.pwn233.digitalgamestore.common
 
 object Constants {
+        const val LOG_ID = "Log-Id"
         //build version
         const val BUILD_VERSION = "version 1.0.1a"
 
@@ -9,6 +10,10 @@ object Constants {
 
         //handle product, promo-code, transaction
         const val URI_STORE_MANAGEMENT = "/store"
+
+        const val CONTROLLER_REQUEST_LOG_MESSAGE = "[{} : Request] -> [Log-Id: {}, payload: {}]"
+        const val CONTROLLER_RESPONSE_LOG_MESSAGE = "[{} : Response] -> [Log-Id: {}, payload: {}, process-time: {}]"
+        const val CONTROLLER_EXCEPTION_LOG_MESSAGE = "[{} : Exception] -> [Log-Id: {}, payload: {}]"
 
         //handle user, membership
         const val URI_ACCOUNT_MANAGEMENT = "/account"

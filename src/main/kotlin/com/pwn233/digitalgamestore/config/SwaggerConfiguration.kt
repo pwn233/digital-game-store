@@ -38,7 +38,7 @@ class SwaggerConfiguration {
                 TitleTag(ACCOUNT_MANAGEMENT)
             ) .apiInfo(
                 ApiInfo(
-                    "digital-game-store",
+                    "Digital-Game-Store API",
                     getResponseDetail(),
                     BUILD_VERSION,
                     "",

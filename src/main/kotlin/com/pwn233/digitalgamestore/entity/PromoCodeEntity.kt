@@ -7,17 +7,14 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "product")
-class ProductEntity (
+@Table(name = "promo_code")
+class PromoCodeEntity (
     @Id
     val id: String = UUID.randomUUID().toString(),
     val storeBranchId: String,
-    val name: String,
-    val price: Double,
-    val description: String? = null,
-    val category: String? = null,
-    val brand: String? = null,
-    val barcode: String? = null,
+    val promoCode: String,
+    val startDate: Date,
+    val endDate: Date,
     val deleted: Boolean = false,
     val createdTime: LocalDateTime = LocalDateTime.now(),
     val createdBy: String,
