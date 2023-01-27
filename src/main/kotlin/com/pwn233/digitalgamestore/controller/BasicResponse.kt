@@ -15,13 +15,13 @@ data class BasicResponse<T>(val status: ResponseStatus, val data: T? = null) {
 }
 data class ResponseStatus(
     // for display on swagger
-    @ApiModelProperty(example = "0", value = "Developer debug status code", required = true)
+    @ApiModelProperty(example = "0", value = "developer debug status code", required = true)
     val code: String,
-    @ApiModelProperty(example = "Success", value = "Developer debug message", required = true)
+    @ApiModelProperty(example = "success", value = "developer debug message", required = true)
     val description: String,
-    @ApiModelProperty(example = "Title to display to end user")
+    @ApiModelProperty(example = "title to display to end user")
     val title: String? = null,
-    @ApiModelProperty(example = "Description to display to end user")
+    @ApiModelProperty(example = "description to display to end user")
     val message: String? = null
 ) {
     companion object {

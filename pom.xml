@@ -16,8 +16,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<acn-log4j.version>2.1.2</acn-log4j.version>
-		<log4j2.version>2.17.0</log4j2.version>
 		<kotlin.version>1.6.21</kotlin.version>
+		<mockk.version>1.9.3</mockk.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -89,6 +89,24 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.mockk</groupId>
+			<artifactId>mockk</artifactId>
+			<version>${mockk.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.nhaarman</groupId>
+			<artifactId>mockito-kotlin</artifactId>
+			<version>1.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.github.benas</groupId>
+			<artifactId>random-beans</artifactId>
+			<version>3.7.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

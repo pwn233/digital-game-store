@@ -36,9 +36,12 @@ class GetProductController(
         )
         @ApiResponses(
             value = [
-                ApiResponse(code = 200, message = "Get Product success"),
-                ApiResponse(code = 204, message = "Content empty"),
-                ApiResponse(code = 500, message = "Internal error server")
+                ApiResponse(code = 200, message = "get product success"),
+                ApiResponse(code = 204, message = "no content"),
+                ApiResponse(code = 401, message = "unauthorized"),
+                ApiResponse(code = 403, message = "forbidden"),
+                ApiResponse(code = 404, message = "not found"),
+                ApiResponse(code = 500, message = "internal server error")
             ]
         )
         fun getProduct(
@@ -52,15 +55,15 @@ class GetProductController(
             @RequestParam(name = "barcode", required = false) barcode: String?,
             @RequestParam(name = "page_no", required = false, defaultValue = "1") pageNo: Int,
             @RequestParam(name = "page_size",required = false, defaultValue = "10") pageSize: Int
-        ): Page<ProductResponse> {
+        ): BasicResponse<Page<ProductResponse>> {
             val requestProcessTime = LocalDateTime.now()
             val payload = "Headers: [LogId to ${digest(logId)}] And " +
                     "Path: [storeBranchId to $storeBranchId] And " +
                     "Param: [name to $name, description to $description, category to $category," +
                     "brand to $brand, barcode to $barcode, pageNo to $pageNo, pageSize to $pageSize]"
             log.info(CONTROLLER_REQUEST_LOG_MESSAGE, this.javaClass.simpleName, Log.register(logId), payload)
-            val response = facade.process(
-                ProductRequest(storeBranchId, name, price, description, category, brand, barcode, pageNo, pageSize))
+            val response = BasicResponse.success(facade.process(
+                ProductRequest(storeBranchId, name, price, description, category, brand, barcode, pageNo, pageSize)))
             log.info(CONTROLLER_RESPONSE_LOG_MESSAGE, this.javaClass.simpleName, Log.get(),
                 response, processTimeDuration(requestProcessTime))
             return response

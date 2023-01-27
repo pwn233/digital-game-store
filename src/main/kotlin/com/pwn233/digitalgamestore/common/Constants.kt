@@ -14,6 +14,8 @@ object Constants {
         const val CONTROLLER_REQUEST_LOG_MESSAGE = "[{} : Request] -> [Log-Id: {}, payload: {}]"
         const val CONTROLLER_RESPONSE_LOG_MESSAGE = "[{} : Response] -> [Log-Id: {}, payload: {}, process-time: {}]"
         const val CONTROLLER_EXCEPTION_LOG_MESSAGE = "[{} : Exception] -> [Log-Id: {}, payload: {}]"
+        const val OTHER_EXCEPTION_LOG_MESSAGE: String = "[{} : Exception] -> [X-Correlation-Id: {}, payload: {}]"
+
 
         //handle user, membership
         const val URI_ACCOUNT_MANAGEMENT = "/account"
