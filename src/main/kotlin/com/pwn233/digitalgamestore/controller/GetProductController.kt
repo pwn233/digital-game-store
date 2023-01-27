@@ -38,9 +38,6 @@ class GetProductController(
             value = [
                 ApiResponse(code = 200, message = "get product success"),
                 ApiResponse(code = 204, message = "no content"),
-                ApiResponse(code = 401, message = "unauthorized"),
-                ApiResponse(code = 403, message = "forbidden"),
-                ApiResponse(code = 404, message = "not found"),
                 ApiResponse(code = 500, message = "internal server error")
             ]
         )

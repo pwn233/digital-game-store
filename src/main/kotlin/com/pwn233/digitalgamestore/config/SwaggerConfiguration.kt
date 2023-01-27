@@ -29,7 +29,7 @@ class SwaggerConfiguration {
     @Bean
     fun api(): Docket? {
         return Docket(DocumentationType.SWAGGER_2)
-            .useDefaultResponseMessages(true)
+            .useDefaultResponseMessages(false)
             .select()
             .paths(PathSelectors.ant("/**/"))
             .build()
