@@ -3,7 +3,7 @@ package com.pwn233.digitalgamestore.common
 object Constants {
         const val LOG_ID = "Log-Id"
         //build version
-        const val BUILD_VERSION = "version 1.0.1a"
+        const val BUILD_VERSION = "version 0.0.1 alpha"
 
         //handle internal
         const val URI_INTERNAL = "/api/internal"
@@ -11,14 +11,14 @@ object Constants {
         //handle product, promo-code, transaction
         const val URI_STORE_MANAGEMENT = "/store"
 
-        const val CONTROLLER_REQUEST_LOG_MESSAGE = "[{} : Request] -> [Log-Id: {}, payload: {}]"
-        const val CONTROLLER_RESPONSE_LOG_MESSAGE = "[{} : Response] -> [Log-Id: {}, payload: {}, process-time: {}]"
-        const val CONTROLLER_EXCEPTION_LOG_MESSAGE = "[{} : Exception] -> [Log-Id: {}, payload: {}]"
-        const val OTHER_EXCEPTION_LOG_MESSAGE: String = "[{} : Exception] -> [X-Correlation-Id: {}, payload: {}]"
-
-
         //handle user, membership
         const val URI_ACCOUNT_MANAGEMENT = "/account"
+
+        //handle message in response log
+        const val CONTROLLER_REQUEST_LOG_MESSAGE = "[{} : Controller Request] -> [Log-Id: {}, payload: {}]"
+        const val CONTROLLER_RESPONSE_LOG_MESSAGE = "[{} : Controller Response] -> [Log-Id: {}, payload: {}, process-time: {}]"
+        const val CONTROLLER_EXCEPTION_LOG_MESSAGE = "[{} : Controller Exception] -> [Log-Id: {}, payload: {}]"
+        const val OTHER_EXCEPTION_LOG_MESSAGE = "[{} : Other Exception] -> [Log-Id: {}, payload: {}]"
 
         //handle uri path
         const val URI_PRODUCT = "/product"

@@ -7,18 +7,14 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "product")
-class ProductEntity (
+@Table(name = "store_branch")
+class StoreBranchEntity (
     @Id
-    val id: String,
-    val storeBranchId: String,
+    val id: String = UUID.randomUUID().toString(),
     val name: String,
-    val price: Double,
-    val description: String? = null,
-    val category: String? = null,
-    val brand: String? = null,
-    val barcode: String? = null,
-    val deleted: Boolean = false,
+    val contactMail: String,
+    val contactPhoneNumber: String,
+    val address: String,
     val createdTime: LocalDateTime = LocalDateTime.now(),
     val createdBy: String,
     val updatedTime: LocalDateTime? = null,

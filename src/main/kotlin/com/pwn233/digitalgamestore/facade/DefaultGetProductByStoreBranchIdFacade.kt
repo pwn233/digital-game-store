@@ -16,7 +16,7 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Component
 
 @Component
-class DefaultGetProductFacade(
+class DefaultGetProductByStoreBranchIdFacade(
     private val productRepository: ProductRepository,
     private val promoCodeProductRepository: PromoCodeProductRepository
 ) {

@@ -20,9 +20,9 @@ import org.springframework.data.domain.PageRequest
 import java.time.LocalDateTime
 
 @ExtendWith(MockKExtension::class)
-internal class DefaultGetProductFacadeTest {
+internal class DefaultGetProductByStoreBranchIdFacadeTest {
 
-    lateinit var subject: DefaultGetProductFacade
+    lateinit var subject: DefaultGetProductByStoreBranchIdFacade
 
     @MockK
     lateinit var productRepository: ProductRepository
@@ -31,7 +31,7 @@ internal class DefaultGetProductFacadeTest {
     lateinit var promoCodeProductRepository: PromoCodeProductRepository
 
     @BeforeEach
-    fun setUp() { subject = DefaultGetProductFacade(productRepository, promoCodeProductRepository) }
+    fun setUp() { subject = DefaultGetProductByStoreBranchIdFacade(productRepository, promoCodeProductRepository) }
 
     private fun mockProductRequest(
         storeBranchId: String = "DGS-BKK-001",

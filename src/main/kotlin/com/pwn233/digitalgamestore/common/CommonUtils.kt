@@ -8,4 +8,7 @@ object CommonUtils {
         val responseProcessTime = LocalDateTime.now();
         return Duration.between(requestProcessTime, responseProcessTime).toMillis();
     }
+
+    fun checkRegexCharacter(regex: String, input: String) = input.matches(regex.toRegex())
+
 }

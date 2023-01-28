@@ -11,7 +11,7 @@ import com.pwn233.digitalgamestore.common.Constants.URI_STORE_MANAGEMENT
 import com.pwn233.digitalgamestore.common.Hashing.digest
 import com.pwn233.digitalgamestore.common.Log
 import com.pwn233.digitalgamestore.config.SwaggerConfiguration.Companion.STORE_MANAGEMENT
-import com.pwn233.digitalgamestore.facade.DefaultGetProductFacade
+import com.pwn233.digitalgamestore.facade.DefaultGetProductByStoreBranchIdFacade
 import io.swagger.annotations.*
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpStatus
@@ -22,13 +22,15 @@ import java.time.LocalDateTime
 @RestController
 @RequestMapping("$URI_INTERNAL$URI_STORE_MANAGEMENT")
 @Api(tags = [STORE_MANAGEMENT])
-class GetProductController(
-    private val facade: DefaultGetProductFacade
+class GetProductControllerByStoreBranchIdController(
+    private val facade: DefaultGetProductByStoreBranchIdFacade
 ) {
+    companion object { private val log = ACNLogger.create(this::class.java) }
+
     @GetMapping("/{storeBranchId}$URI_PRODUCT")
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(
-            value = "Get Product API",
+            value = "Get Product",
             notes = "Possible response status codes: 0, 10001"
         )
         @ApiImplicitParams(
@@ -65,9 +67,6 @@ class GetProductController(
                 response, processTimeDuration(requestProcessTime))
             return response
         }
-    companion object {
-        private val log = ACNLogger.create(this::class.java)
-    }
 }
 
 data class ProductRequest(

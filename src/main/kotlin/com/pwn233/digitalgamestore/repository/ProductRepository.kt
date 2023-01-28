@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
+import java.util.*
 
 @Repository
 interface ProductRepository : JpaRepository<ProductEntity, String> {
@@ -17,7 +18,10 @@ interface ProductRepository : JpaRepository<ProductEntity, String> {
             "(:category is null OR p.category LIKE CONCAT('%',:category,'%')) AND " +
             "(:brand is null OR p.brand LIKE CONCAT('%',:brand,'%')) AND " +
             "(:barcode is null OR p.barcode LIKE CONCAT ('%',:barcode, '%')) ORDER BY p.id ASC ")
-    fun findProductWithCriteria(storeBranchId: String, name: String?, price: Double?, description: String?, category: String?,
-                                  brand: String?, barcode: String?, pageable: Pageable
-    ): Page<ProductEntity>?
+    fun findProductWithCriteria(storeBranchId: String, name: String?, price: Double?, description: String?,
+                                category: String?, brand: String?, barcode: String?, pageable: Pageable):
+            Page<ProductEntity>?
+
+    fun findByStoreBranchIdAndNameAndDeleted(storeBranchId: String, name: String, deleted: Boolean): Optional<ProductEntity>
+
 }

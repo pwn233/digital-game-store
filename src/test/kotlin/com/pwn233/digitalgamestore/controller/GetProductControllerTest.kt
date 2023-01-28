@@ -6,7 +6,7 @@ import com.pwn233.digitalgamestore.common.Constants.URI_INTERNAL
 import com.pwn233.digitalgamestore.common.Constants.URI_STORE_MANAGEMENT
 import com.pwn233.digitalgamestore.config.WebTestConfig
 import com.pwn233.digitalgamestore.exception.DigitalGameStoreForHttpStatusException
-import com.pwn233.digitalgamestore.facade.DefaultGetProductFacade
+import com.pwn233.digitalgamestore.facade.DefaultGetProductByStoreBranchIdFacade
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
@@ -34,7 +34,7 @@ internal class GetProductControllerTest {
     private lateinit var mockMvc: MockMvc
 
     @MockBean
-    lateinit var facade: DefaultGetProductFacade
+    lateinit var facade: DefaultGetProductByStoreBranchIdFacade
 
     private val logId = "logId"
 

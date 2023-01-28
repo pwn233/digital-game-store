@@ -13,4 +13,5 @@ CREATE TABLE IF NOT EXISTS `digital-game-store`.`product` (
   `updated_time` DATETIME DEFAULT NULL,
   `updated_by` VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
+    INDEX `PRODUCT_IDX01` (`id`,`created_time`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
